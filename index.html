@@ -92,6 +92,11 @@
             alert("You must choose a title");
             return false;
         }
+        if ( (infoForms.mr.checked) && (infoForms.mme.checked) )
+        {
+            alert("You must choose a title");
+            return false;
+        }
         if ( (firstname.length < 1) || (!firstname.match(textformat)) ){
             alert("please enter a valid first name");
             return false;
