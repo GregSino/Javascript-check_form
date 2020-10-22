@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="row">
+    <div class="container">
+        <form method="get" onsubmit="return " name="formul">
+            <div class="form-group">
+                <label for="nombre1">Nombre 1</label>
+                <input type="text" class="form-control" id="nombre1" name="nombre1">
+            </div>
+            <div class="form-group">
+                <label for="nombre2">Nombre 2</label>
+                <input type="text" class="form-control" id="nombre2" name="nombre2">
+            </div>
+            <div class="form-group">
+                <label for="nombre3">Nombre 3</label>
+                <input type="text" class="form-control" id="nombre3" name="nombre3">
+            </div>
+            <div class="form-group">
+                <label for="nombre4">Nombre 4</label>
+                <input type="text" class="form-control" id="nombre4" name="nombre4">
+            </div>
+            <div class="form-group">
+                <label for="total">Total</label>
+                <input type="button" class="form-control" id="total" name="total">
+            </div>
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var resultat = document.querySelector('#total');
+    var calcul = 0;
+    var liste_input = document.querySelectorAll("input[type=text]");
+
+    liste_input.forEach(function (test) {
+        test.addEventListener('keyup', sum_elements);
+    });
+
+    function sum_elements() {
+        for(var i = 1; i <= liste_input.length; i++) {
+            var element = document.getElementById('nombre'+i);
+            if(element.value !='' && !isNaN(element.value)) {
+                calcul += parseInt(element.value);
+            }
+
+        }
+        resultat.value = calcul;
+        console.log(calcul);
+    }
+    sum_elements();
+
+</script>
+</body>
+</html>
