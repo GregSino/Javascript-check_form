@@ -37,7 +37,7 @@ var shopCart = (function() {
                 return;
             }
         }
-        var  item = new Item(name, price, count);
+        item = new Item(name, price, count);
         cart.push(item);
         saveCart();
     }
